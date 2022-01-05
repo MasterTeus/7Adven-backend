@@ -4,7 +4,7 @@ module.exports = {
   async store(req, res) {
     const { sharedCode, name, location, dates, contributors } = req.body;
 
-    const response = await UserModel.create({
+    const response = await ProjectModel.create({
       sharedCode,
       name,
       location,
