@@ -1,17 +1,35 @@
 const ProjectModel = require("../models/ProjectModel");
+const UserModel = require("../models/UserModel");
 
 module.exports = {
   async store(req, res) {
-    const { sharedCode, name, location, dates, contributors } = req.body;
+    const { name, location, dates, ownerName } = req.body;
 
-    const response = await ProjectModel.create({
-      sharedCode,
+    const responseNewProject = await ProjectModel.create({
       name,
       location,
       dates,
-      contributors
+      contributors: [{ name: ownerName }]
     });
 
-    return res.json(response);
+    // const isUserExists = await UserModel.findOne({ deviceId });
+
+    // if (isUserExists) {
+    //   console.log("Usuario ja existe");
+    //   await UserModel.findByIdAndUpdate(
+    //     isUserExists._id,
+    //     { projects: [...isUserExists.projects, responseNewProject] },
+    //     { new: true }
+    //   );
+    // } else {
+    //   console.log("Novo User");
+    //   await UserModel.create({
+    //     name: ownerName,
+    //     deviceId,
+    //     projects: [responseNewProject]
+    //   });
+    // }
+
+    return res.json(responseNewProject);
   }
 };

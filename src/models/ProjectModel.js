@@ -8,12 +8,7 @@ const ProjectSchema = new mongoose.Schema({
     longitude: String
   },
   dates: [String],
-  contributors: [
-    {
-      name: String,
-      deviceId: String
-    }
-  ],
+  contributors: [],
   // guest: { type: mongoose.Schema.Types.ObjectId, ref: "Guest" }
 });
 
