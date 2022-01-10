@@ -81,5 +81,15 @@ module.exports = {
     const response = await GuestModel.findById(id);
 
     return res.json(response);
+  },
+
+  async getGuestHash(req, res) {
+    const { hash } = req.params;
+
+    console.log(hash);
+
+    const response = await GuestModel.findOne({ hash: hash });
+
+    return res.json(response);
   }
 };

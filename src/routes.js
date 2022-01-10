@@ -16,5 +16,6 @@ routes.post("/guest", GuestController.store);
 routes.get("/guests-to-project/:id", GuestController.getGuestForProject);
 routes.post("/checking-presence/:id/", GuestController.checkingPresence);
 routes.post("/checking-visited/:id/", GuestController.checkingVisited);
+routes.get("/get-guest/:hash/", GuestController.getGuestHash);
 
 module.exports = routes;
