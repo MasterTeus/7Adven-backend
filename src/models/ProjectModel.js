@@ -4,12 +4,12 @@ const ProjectSchema = new mongoose.Schema({
   sharedCode: String,
   name: String,
   location: {
-    latitude: String,
-    longitude: String
+    latitude: Number,
+    longitude: Number
   },
   dates: [String],
   contributors: [],
-  // guest: { type: mongoose.Schema.Types.ObjectId, ref: "Guest" }
+  guest: [{ type: mongoose.Schema.Types.ObjectId, ref: "Guest" }]
 });
 
 module.exports = mongoose.model("Project", ProjectSchema);

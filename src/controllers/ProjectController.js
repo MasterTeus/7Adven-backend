@@ -31,5 +31,13 @@ module.exports = {
     // }
 
     return res.json(responseNewProject);
+  },
+
+  async index(req, res) {
+    const { id } = req.params;
+
+    const response = await ProjectModel.findById(id);
+
+    return res.json(response);
   }
 };
