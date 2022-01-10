@@ -10,6 +10,7 @@ const routes = Router();
 
 routes.post("/project", ProjectController.store);
 routes.get("/project/:id", ProjectController.index);
+routes.post("/add-contributors/:id", ProjectController.storeContributors);
 
 routes.post("/guest", GuestController.store);
 routes.get("/guests-to-project/:id", GuestController.getGuestForProject);

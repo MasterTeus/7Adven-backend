@@ -39,5 +39,20 @@ module.exports = {
     const response = await ProjectModel.findById(id);
 
     return res.json(response);
+  },
+
+  async storeContributors(req, res) {
+    const { id } = req.params;
+    const { name } = req.body;
+
+    const response = await ProjectModel.findByIdAndUpdate(
+      id,
+      {
+        $push: { contributors: { name: name } }
+      },
+      { new: true }
+    );
+
+    return res.json(response);
   }
 };
