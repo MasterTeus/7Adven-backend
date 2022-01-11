@@ -88,7 +88,9 @@ module.exports = {
 
     console.log(hash);
 
-    const response = await GuestModel.findOne({ hash: hash });
+    const response = await GuestModel.findOne({ hash: hash }).populate(
+      "projectId"
+    );
 
     return res.json(response);
   }
