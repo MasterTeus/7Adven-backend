@@ -5,7 +5,7 @@ const GuestController = require('./controllers/GuestController');
 
 const routes = Router();
 
-routes.get('/', (req, res) => {
+routes.get('/', (_, res) => {
   return res.json({ message: 'Ola Mundo' });
 });
 
