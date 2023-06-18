@@ -11,6 +11,8 @@ mongoose.set('strictQuery', true);
 mongoose.connect(
   'mongodb+srv://admin:7adven2022@cluster0.cbv5j.gcp.mongodb.net/?retryWrites=true&w=majority',
   {
+    useFindAndModify: false,
+    useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true
   }
