@@ -9,7 +9,7 @@ app.use(routes);
 mongoose.set('strictQuery', true);
 
 mongoose.connect(
-  'mongodb+srv://admin:7adven2022@cluster0.cbv5j.gcp.mongodb.net/?retryWrites=true&w=majority',
+  'mongodb+srv://admin:bWmgBB0HlFPoA8HI@cluster0.cbv5j.gcp.mongodb.net/?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
